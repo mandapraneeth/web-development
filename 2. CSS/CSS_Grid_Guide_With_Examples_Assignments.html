@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Complete Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      color: #0077cc;
+      margin-top: 40px;
+    }
+    .container, .assignment1, .gallery {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .container {
+      grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto 1fr auto;
+    }
+    .header { grid-area: header; background: #cce5ff; padding: 10px; }
+    .sidebar { grid-area: sidebar; background: #e2e2e2; padding: 10px; }
+    .content { grid-area: content; background: #d4edda; padding: 10px; }
+    .footer { grid-area: footer; background: #f8d7da; padding: 10px; }
+
+    .assignment1 {
+      grid-template-areas:
+        "header header header"
+        "col1 col2 col3"
+        "footer footer footer";
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr auto;
+    }
+    .a-header { grid-area: header; background: #ffc; padding: 10px; }
+    .a-footer { grid-area: footer; background: #fcc; padding: 10px; }
+    .col1, .col2, .col3 {
+      background: #f0f0f0;
+      padding: 10px;
+    }
+    .col1 { grid-area: col1; }
+    .col2 { grid-area: col2; }
+    .col3 { grid-area: col3; }
+
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .gallery div {
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #bbb;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Grid Layout: Complete Guide</h1>
+
+  <h2>Basic Grid Layout</h2>
+  <div class="container">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Main Content</div>
+    <div class="footer">Footer</div>
+  </div>
+
+  <h2>Assignment 1: 3-Column Blog Layout</h2>
+  <div class="assignment1">
+    <div class="a-header">Header</div>
+    <div class="col1">Column 1</div>
+    <div class="col2">Column 2</div>
+    <div class="col3">Column 3</div>
+    <div class="a-footer">Footer</div>
+  </div>
+
+  <h2>Assignment 2: Responsive Gallery</h2>
+  <div class="gallery">
+    <div>Image 1</div>
+    <div>Image 2</div>
+    <div>Image 3</div>
+    <div>Image 4</div>
+    <div>Image 5</div>
+  </div>
+
+
+  <h2>Assignment 3: Pricing Table (3 Cards)</h2>
+  <div class="assignment1">
+    <div class="col1">
+      <h3>Basic</h3>
+      <p>$9/mo</p>
+    </div>
+    <div class="col2">
+      <h3>Pro</h3>
+      <p>$29/mo</p>
+    </div>
+    <div class="col3">
+      <h3>Enterprise</h3>
+      <p>$99/mo</p>
+    </div>
+  </div>
+
+  <h2>CSS Grid vs Flexbox Comparison</h2>
+  <p><strong>CSS Grid:</strong> Best for two-dimensional layouts (rows + columns)</p>
+  <ul>
+    <li>Control over both rows and columns</li>
+    <li>Good for full-page layouts</li>
+    <li>Items placed using grid lines or named areas</li>
+  </ul>
+
+  <p><strong>Flexbox:</strong> Best for one-dimensional layouts (either rows OR columns)</p>
+  <ul>
+    <li>Align items in a single direction</li>
+    <li>Useful for navbars, cards in a row</li>
+    <li>Items flow in DOM order</li>
+  </ul>
+
+  <h2>Flexbox Example</h2>
+  <div style="display: flex; gap: 10px; background: #eee; padding: 10px;">
+    <div style="flex: 1; background: #ccc; padding: 10px;">Item 1</div>
+    <div style="flex: 1; background: #ddd; padding: 10px;">Item 2</div>
+    <div style="flex: 1; background: #bbb; padding: 10px;">Item 3</div>
+  </div>
+
+
+  <h2>Real-World Layout: Responsive Website</h2>
+  <p>This layout combines <strong>CSS Grid</strong> for page structure and <strong>Flexbox</strong> for content alignment.</p>
+
+  <style>
+    .site-wrapper {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr auto;
+    }
+
+    @media (min-width: 768px) {
+      .site-wrapper {
+        grid-template-areas:
+          "header header"
+          "nav main"
+          "footer footer";
+        grid-template-columns: 200px 1fr;
+      }
+    }
+
+    .site-header, .site-footer {
+      background: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .site-nav {
+      background: #eee;
+      padding: 15px;
+      grid-area: nav;
+    }
+
+    .site-main {
+      background: #f9f9f9;
+      padding: 15px;
+      grid-area: main;
+    }
+
+    .site-header {
+      grid-area: header;
+    }
+
+    .site-footer {
+      grid-area: footer;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card {
+      flex: 1 1 calc(33% - 10px);
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+    }
+
+    @media (max-width: 767px) {
+      .card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+
+  <div class="site-wrapper">
+    <header class="site-header">My Website</header>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <main class="site-main">
+      <h3>Welcome to our site!</h3>
+      <p>This is a responsive layout using Grid for structure and Flexbox for content cards.</p>
+      <div class="card-container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+      </div>
+    </main>
+    <footer class="site-footer">© 2025 My Website</footer>
+  </div>
+
+</body>
+</html>

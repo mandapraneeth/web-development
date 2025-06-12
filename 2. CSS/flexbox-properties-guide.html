@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Flexbox Properties Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .example {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      background: #f9f9f9;
+    }
+    .flex-container {
+      display: flex;
+      background: #e0f7fa;
+      padding: 10px;
+      margin-top: 10px;
+      height: 120px;
+    }
+    .flex-container div {
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    .red { background: red; }
+    .green { background: green; }
+    .blue { background: blue; }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Flexbox Properties Guide</h1>
+
+  <div class="section">
+    <h2>1. display: flex</h2>
+    <p>Enables flex context on the container.</p>
+    <div class="example">
+      <code>display: flex;</code>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>2. flex-direction</h2>
+    <p>Controls the direction of flex items.</p>
+    <div class="example flex-container" style="flex-direction: row;">
+      <div class="red">Row 1</div>
+      <div class="green">Row 2</div>
+      <div class="blue">Row 3</div>
+    </div>
+    <div class="example flex-container" style="flex-direction: column; height: auto;">
+      <div class="red">Column 1</div>
+      <div class="green">Column 2</div>
+      <div class="blue">Column 3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. justify-content</h2>
+    <p>Aligns items horizontally in the main axis.</p>
+    <div class="example flex-container" style="justify-content: space-around;">
+      <div class="red">1</div>
+      <div class="green">2</div>
+      <div class="blue">3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. align-items</h2>
+    <p>Aligns items vertically in the cross axis.</p>
+    <div class="example flex-container" style="align-items: center;">
+      <div class="red" style="height: 40px;">A</div>
+      <div class="green" style="height: 80px;">B</div>
+      <div class="blue" style="height: 60px;">C</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>5. flex-wrap</h2>
+    <p>Allows items to wrap onto multiple lines.</p>
+    <div class="example flex-container" style="flex-wrap: wrap;">
+      <div class="red" style="width: 200px;">1</div>
+      <div class="green" style="width: 200px;">2</div>
+      <div class="blue" style="width: 200px;">3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>6. flex-grow</h2>
+    <p>Defines how much a flex item will grow relative to others.</p>
+    <div class="example flex-container">
+      <div class="red" style="flex-grow: 1;">Grow 1</div>
+      <div class="green" style="flex-grow: 2;">Grow 2</div>
+      <div class="blue" style="flex-grow: 1;">Grow 1</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>7. flex-shrink</h2>
+    <p>Defines how much a flex item will shrink relative to others.</p>
+    <div class="example flex-container" style="width: 300px;">
+      <div class="red" style="flex-shrink: 1; width: 200px;">Shrink 1</div>
+      <div class="green" style="flex-shrink: 2; width: 200px;">Shrink 2</div>
+      <div class="blue" style="flex-shrink: 1; width: 200px;">Shrink 1</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>8. flex-basis</h2>
+    <p>Sets the initial main size of the flex item before growing/shrinking.</p>
+    <div class="example flex-container">
+      <div class="red" style="flex-basis: 100px;">100px</div>
+      <div class="green" style="flex-basis: 200px;">200px</div>
+      <div class="blue" style="flex-basis: 150px;">150px</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>9. flex (shorthand)</h2>
+    <p>Combines <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</p>
+    <div class="example flex-container">
+      <div class="red" style="flex: 1 1 100px;">1 1 100px</div>
+      <div class="green" style="flex: 2 1 100px;">2 1 100px</div>
+      <div class="blue" style="flex: 1 1 100px;">1 1 100px</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>10. align-self</h2>
+    <p>Overrides <code>align-items</code> for individual items.</p>
+    <div class="example flex-container" style="align-items: flex-start;">
+      <div class="red">Default</div>
+      <div class="green" style="align-self: center;">Center</div>
+      <div class="blue" style="align-self: flex-end;">End</div>
+    </div>
+  </div>
+
+</body>
+</html>

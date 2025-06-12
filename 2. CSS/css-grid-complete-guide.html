@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Layout Complete Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    .grid-container {
+      display: grid;
+      gap: 10px;
+      background-color: #ccc;
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: #3498db;
+      color: white;
+      padding: 20px;
+      font-size: 18px;
+      text-align: center;
+    }
+    .example1 {
+      grid-template-columns: auto auto auto;
+    }
+    .example2 {
+      grid-template-columns: 100px 1fr 2fr;
+    }
+    .example3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .example4 {
+      grid-template-areas:
+        "header header header"
+        "menu content sidebar"
+        "footer footer footer";
+    }
+    .header { grid-area: header; }
+    .menu { grid-area: menu; }
+    .content { grid-area: content; }
+    .sidebar { grid-area: sidebar; }
+    .footer { grid-area: footer; }
+    .assignment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Grid Layout Complete Guide with Examples</h1>
+
+  <section>
+    <h2>1. display: grid</h2>
+    <p>Makes the container a grid layout.</p>
+    <div class="grid-container example1">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. grid-template-columns</h2>
+    <p>Defines the columns of the grid using fixed, fractional, or repeat values.</p>
+    <div class="grid-container example2">
+      <div class="grid-item">100px</div>
+      <div class="grid-item">1fr</div>
+      <div class="grid-item">2fr</div>
+    </div>
+    <div class="grid-container example3">
+      <div class="grid-item">1fr</div>
+      <div class="grid-item">1fr</div>
+      <div class="grid-item">1fr</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. grid-template-areas</h2>
+    <p>Defines layout by naming grid areas.</p>
+    <div class="grid-container example4">
+      <div class="grid-item header">Header</div>
+      <div class="grid-item menu">Menu</div>
+      <div class="grid-item content">Content</div>
+      <div class="grid-item sidebar">Sidebar</div>
+      <div class="grid-item footer">Footer</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Responsive Grid with auto-fit</h2>
+    <p>Use <code>repeat(auto-fit, minmax(...))</code> for responsive design.</p>
+    <div class="grid-container assignment-grid">
+      <div class="grid-item">Box 1</div>
+      <div class="grid-item">Box 2</div>
+      <div class="grid-item">Box 3</div>
+      <div class="grid-item">Box 4</div>
+      <div class="grid-item">Box 5</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Assignment: Grid-Based Product Card Layout</h2>
+    <p><strong>Task:</strong> Create a product grid with 3 columns that turns into 1 column on small screens.</p>
+    <pre><code>.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+    <p><strong>Solution Tip:</strong> Use <code>media queries</code> to adjust <code>grid-template-columns</code>.</p>
+  </section>
+</body>
+</html>

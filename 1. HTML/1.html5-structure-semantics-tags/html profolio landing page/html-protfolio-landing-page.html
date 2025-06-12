@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- SEO Meta -->
+  <title>Jane Doe - Portfolio</title>
+  <meta name="description" content="Jane Doe's professional portfolio - Web developer, designer, and problem solver." />
+  
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Jane Doe - Portfolio" />
+  <meta property="og:description" content="Check out my web development projects and skills." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://janedoe.com" />
+  <meta property="og:image" content="https://janedoe.com/assets/og-image.jpg" />
+  
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header role="banner">
+    <nav role="navigation" aria-label="Primary Navigation">
+      <h1 class="logo">Jane Doe</h1>
+      <ul class="nav-links">
+        <li><a href="#about" aria-current="page">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" role="region" aria-label="Introduction">
+    <h2>Hi, I'm Jane Doe</h2>
+    <p><strong>Web Developer</strong> &amp; <em>UI/UX Designer</em> passionate about building accessible, responsive websites.</p>
+    <a href="#projects" class="btn" data-scroll="true">View Projects</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" role="region" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Me</h2>
+    <p>I specialize in creating user-friendly web applications using modern technologies like HTML5, CSS3, and JavaScript. I love crafting clean, semantic code with accessibility in mind.</p>
+    <ul>
+      <li>Expertise: HTML, CSS, JS, React, Node.js</li>
+      <li>Passion: Accessibility, SEO, Performance</li>
+      <li>Interests: Open source, Blogging, Photography</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section with Table -->
+  <section id="projects" role="region" aria-labelledby="projects-heading">
+    <h2 id="projects-heading">Projects</h2>
+
+    <table border="1" summary="Summary of key projects with technologies and links">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Description</th>
+          <th>Technologies</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Portfolio Website</td>
+          <td>A responsive, SEO-friendly portfolio site.</td>
+          <td>HTML5, CSS3, JavaScript</td>
+          <td><a href="https://janedoe.com" target="_blank" rel="noopener">View</a></td>
+        </tr>
+        <tr>
+          <td>Task Manager App</td>
+          <td>A React-based productivity app with localStorage.</td>
+          <td>React, localStorage, CSS Modules</td>
+          <td><a href="https://github.com/janedoe/taskmanager" target="_blank" rel="noopener">GitHub</a></td>
+        </tr>
+        <tr>
+          <td>Photo Blog</td>
+          <td>Photography blog with embedded videos and galleries.</td>
+          <td>HTML5, CSS Grid, Video Embedding</td>
+          <td><a href="https://janedoephotos.com" target="_blank" rel="noopener">Visit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Media Section (Audio, Video, Iframe) -->
+  <section id="media" role="region" aria-labelledby="media-heading">
+    <h2 id="media-heading">Media Samples</h2>
+
+    <!-- Audio -->
+    <article>
+      <h3>Podcast Introduction</h3>
+      <audio controls aria-label="Podcast Introduction Audio">
+        <source src="media/podcast-intro.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </article>
+
+    <!-- Video -->
+    <article>
+      <h3>Project Demo Video</h3>
+      <video controls width="320" height="180" aria-label="Project Demo Video">
+        <source src="media/project-demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <!-- Embedded Google Map (Iframe) -->
+    <article>
+      <h3>Location</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!..." 
+        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+        title="Jane Doe Office Location"></iframe>
+    </article>
+  </section>
+
+  <!-- Contact Section with Form -->
+  <section id="contact" role="region" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Me</h2>
+    <form action="mailto:jane.doe@example.com" method="post" enctype="text/plain" aria-describedby="form-instructions">
+      <p id="form-instructions">Please fill in the form to send me a message.</p>
+
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="name">Name <sup>*</sup></label><br />
+        <input type="text" id="name" name="name" required minlength="2" aria-required="true" /><br />
+
+        <label for="email">Email <sup>*</sup></label><br />
+        <input type="email" id="email" name="email" required aria-required="true" /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Message</legend>
+
+        <label for="subject">Subject</label><br />
+        <input type="text" id="subject" name="subject" maxlength="50" /><br />
+
+        <label for="message">Message <sup>*</sup></label><br />
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea><br />
+      </fieldset>
+
+      <label><input type="checkbox" name="subscribe" value="yes" /> Subscribe to newsletter</label><br /><br />
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>© 2025 Jane Doe. All rights reserved.</p>
+  </footer>
+
+  <!-- Link External JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+

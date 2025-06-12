@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Div and Text Centering Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      border-bottom: 1px solid #ccc;
+      padding: 40px 20px;
+    }
+    h2 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>1. Center Div Horizontally + Center Text</h2>
+    <div style="width: 300px; margin: 0 auto; text-align: center; background: lightblue; padding: 20px;">
+      I am a centered div and this text is centered inside me.
+    </div>
+  </section>
+
+  <section style="height: 100vh; display: flex; justify-content: center; align-items: center; background: #f0f0f0;">
+    <div style="background: lightgreen; padding: 20px; text-align: center;">
+      Centered div and centered text!
+    </div>
+  </section>
+
+  <section style="display: grid; place-items: center; height: 100vh; background: #eee;">
+    <div style="background: coral; padding: 20px; text-align: center;">
+      I’m centered using Grid, and my text is centered too.
+    </div>
+  </section>
+
+  <section style="position: relative; height: 100vh; background: #f9f9f9;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                padding: 20px; background: orange; text-align: center;">
+      Absolutely centered div with centered text.
+    </div>
+  </section>
+
+  <section style="position: relative; height: 100vh; background: #f8f8ff;">
+    <div style="position: absolute; inset: 0; margin: auto; width: 300px; height: 100px;
+                background: violet; text-align: center; display: flex; justify-content: center; align-items: center;">
+      Modern centered box with centered text
+    </div>
+  </section>
+
+</body>
+</html>

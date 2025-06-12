@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Padding, Margin, and Flexbox Examples</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin-bottom: 40px; }
+    .box { border: 2px solid #333; margin: 20px; padding: 20px; }
+    .flex-row { display: flex; gap: 20px; }
+    .flex-column { display: flex; flex-direction: column; gap: 20px; }
+    .flex-align { display: flex; justify-content: space-between; align-items: center; height: 100px; background: #f0f0f0; }
+    .item { padding: 20px; color: white; }
+    .red { background: red; }
+    .green { background: green; }
+    .blue { background: blue; }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Padding, Margin, and Flexbox</h1>
+
+  <div class="section">
+    <h2>Padding vs Margin</h2>
+    <div style="background: lightblue; padding: 20px; margin: 30px; border: 2px solid navy;">
+      I have padding inside and margin outside.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Flexbox Row Example</h2>
+    <div class="flex-row">
+      <div class="item red">Box 1</div>
+      <div class="item green">Box 2</div>
+      <div class="item blue">Box 3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Flexbox Column Example</h2>
+    <div class="flex-column">
+      <div class="item red">Column 1</div>
+      <div class="item green">Column 2</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Justify Content and Align Items</h2>
+    <div class="flex-align">
+      <div class="item red">Left</div>
+      <div class="item blue">Right</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Practice Exercises</h2>
+    <ol>
+      <li>Create a box with <strong>30px padding</strong> and <strong>50px margin</strong>.</li>
+      <li>Make a flex container with 3 items aligned <strong>horizontally</strong> and spaced <strong>evenly</strong>.</li>
+      <li>Create a column layout using <code>flex-direction: column</code>.</li>
+      <li>Vertically center a box inside a container using <code>align-items: center</code>.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>Solutions</h2>
+    <ol>
+      <li>
+        <pre><code>
+.box {
+  padding: 30px;
+  margin: 50px;
+  border: 1px solid black;
+}
+        </code></pre>
+      </li>
+      <li>
+        <pre><code>
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+        </code></pre>
+      </li>
+      <li>
+        <pre><code>
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+        </code></pre>
+      </li>
+      <li>
+        <pre><code>
+.align-center {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+        </code></pre>
+      </li>
+    </ol>
+  </div>
+
+</body>
+</html>

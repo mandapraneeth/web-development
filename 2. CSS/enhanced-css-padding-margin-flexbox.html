@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced CSS Padding, Margin, Flexbox</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin-bottom: 40px; }
+    .item { padding: 20px; color: white; }
+    .red { background: red; }
+    .green { background: green; }
+    .blue { background: blue; }
+    .flex-row, .flex-column, .flex-resize { display: flex; gap: 20px; }
+    .flex-column { flex-direction: column; }
+    .flex-align { display: flex; justify-content: space-between; align-items: center; height: 100px; background: #f0f0f0; }
+    .responsive-box { display: flex; gap: 10px; padding: 20px; background: #e0f7fa; }
+    .info-box { background: #fffbe6; border-left: 6px solid orange; padding: 10px; margin-top: 10px; }
+    .box1, .box2 { width: 200px; padding: 20px; border: 1px solid black; margin: 10px; }
+    .box1 { box-sizing: content-box; }
+    .box2 { box-sizing: border-box; }
+    .flex-resize div { transition: flex 0.5s ease; }
+    .flex-resize:hover .item:nth-child(2) { flex: 2; }
+    header, footer, aside, section { padding: 20px; color: white; }
+    header { background: #00796b; }
+    footer { background: #004d40; }
+    aside { background: #388e3c; width: 30%; }
+    section { background: #81c784; width: 70%; }
+    .page-layout { display: flex; }
+    @media (max-width: 600px) {
+      .responsive-box { flex-direction: column; padding: 10px; }
+      .page-layout { flex-direction: column; }
+      aside, section { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enhanced CSS Padding, Margin, and Flexbox</h1>
+
+  <div class="section">
+    <h2>Padding vs Margin</h2>
+    <div style="background: lightblue; padding: 20px; margin: 30px; border: 2px solid navy;">
+      I have padding inside and margin outside.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Flexbox Row Example</h2>
+    <div class="flex-row">
+      <div class="item red">Box 1</div>
+      <div class="item green">Box 2</div>
+      <div class="item blue">Box 3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Toggle Flex Direction</h2>
+    <button onclick="document.getElementById('toggleBox').style.flexDirection='row'">Row</button>
+    <button onclick="document.getElementById('toggleBox').style.flexDirection='column'">Column</button>
+    <div id="toggleBox" style="display: flex; gap: 10px; margin-top: 10px;">
+      <div class="item red">1</div>
+      <div class="item green">2</div>
+      <div class="item blue">3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Box Sizing: content-box vs border-box</h2>
+    <div class="box1">Content Box</div>
+    <div class="box2">Border Box</div>
+  </div>
+
+  <div class="section">
+    <h2>Responsive Flexbox</h2>
+    <div class="responsive-box">
+      <div class="item red">Responsive 1</div>
+      <div class="item green">Responsive 2</div>
+      <div class="item blue">Responsive 3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Animated Flex Resizing</h2>
+    <div class="flex-resize">
+      <div class="item red">Flex 1</div>
+      <div class="item green">Flex 2 (Grows on Hover)</div>
+      <div class="item blue">Flex 3</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Info Box Tip</h2>
+    <div class="info-box">
+      <strong>Tip:</strong> Use <code>gap</code> instead of margin for spacing flex items!
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Real-World Page Layout</h2>
+    <header>Navigation</header>
+    <div class="page-layout">
+      <aside>Sidebar</aside>
+      <section>Main Content</section>
+    </div>
+    <footer>Footer</footer>
+  </div>
+
+  <div class="section">
+    <h2>💡 Challenge Yourself</h2>
+    <p>Create a pricing table with 3 columns using Flexbox. Add padding and margin creatively.</p>
+  </div>
+
+</body>
+</html>

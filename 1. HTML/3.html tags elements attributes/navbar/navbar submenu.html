@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Menu</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      nav {
+        background-color: #333;
+        padding: 1rem;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        position: relative;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 15px;
+        display: block;
+      }
+
+      nav a:hover {
+        background-color: #555;
+        border-radius: 5px;
+      }
+
+      /* Dropdown menu */
+      nav ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        padding: 0;
+        min-width: 160px;
+        z-index: 100;
+        border-radius: 0 0 8px 8px;
+      }
+
+      nav ul li:hover ul {
+        display: block;
+      }
+
+      nav ul li ul li a {
+        padding: 10px 15px;
+      }
+
+      nav ul li ul li a:hover {
+        background-color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+          <a href="#">Services ▾</a>
+          <ul>
+            <li><a href="/web">Web Design</a></li>
+            <li><a href="/seo">SEO</a></li>
+            <li><a href="/marketing">Marketing</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aside Menu</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      font-family: Arial, sans-serif;
+    }
+
+    aside {
+      width: 200px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      padding-top: 20px;
+    }
+
+    aside ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    aside li {
+      padding: 15px 20px;
+      border-bottom: 1px solid #444;
+      cursor: pointer;
+    }
+
+    aside li:hover {
+      background-color: #555;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <ul>
+      <li>Dashboard</li>
+      <li>Profile</li>
+      <li>Settings</li>
+      <li>Logout</li>
+    </ul>
+  </aside>
+
+  <main>
+    <h1>Welcome to the Dashboard</h1>
+    <p>This is the main content area of your page.</p>
+  </main>
+</body>
+</html>

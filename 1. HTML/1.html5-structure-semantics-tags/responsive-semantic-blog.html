@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive semantic blog website layout using HTML5 and CSS.">
+  <title>Responsive Semantic Blog</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header, nav, main, aside, footer {
+      padding: 20px;
+      margin: 10px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    header {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+    }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+    }
+    article {
+      margin-bottom: 20px;
+    }
+    article h2 {
+      color: #0077cc;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Semantic Blog</h1>
+    <p>Insights, tutorials, and stories</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <article>
+        <header>
+          <h2>Understanding Semantic HTML</h2>
+          <p><time datetime="2025-06-12">June 12, 2025</time> • by Admin</p>
+        </header>
+        <p>Semantic HTML helps improve accessibility, SEO, and code readability. Tags like <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> describe the purpose of the content clearly...</p>
+      </article>
+
+      <article>
+        <header>
+          <h2>CSS Grid Layout: A Powerful Layout System</h2>
+          <p><time datetime="2025-06-10">June 10, 2025</time> • by Praneeth</p>
+        </header>
+        <p>CSS Grid allows you to create complex responsive layouts with ease. Learn how to use rows, columns, and grid areas in real-world scenarios...</p>
+      </article>
+    </section>
+
+    <aside>
+      <h3>About Me</h3>
+      <p>Hello! I'm a front-end developer sharing tips and tricks on modern web design and development.</p>
+
+      <h3>Recent Posts</h3>
+      <ul>
+        <li><a href="#">How to Center Elements in CSS</a></li>
+        <li><a href="#">Flexbox vs. Grid: When to Use What</a></li>
+        <li><a href="#">HTML5 Elements You Should Use</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Semantic Blog. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+
+</body>
+</html>
