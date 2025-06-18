@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical website 1</title>
+
+    <style>
+      body {
+        background-color: white;
+        margin: 0px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        display: flex;
+        color: black;
+        background-color: white;
+        text-align: right;
+        justify-content: right;
+        padding-right: 20px;
+      }
+
+      nav {
+        display: flex;
+        background-color: black;
+        color: white;
+        width: 100%;
+        position: sticky;
+        top: 0px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        padding: 20px;
+      }
+
+      .layout {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      aside {
+        width: 20%;
+        background-color: blue;
+       justify-items: center;
+
+      }
+      main {
+        width: 80%;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+      }
+
+      section {
+        padding: 40px;
+      }
+
+      section #dm {
+        border-radius: 20px;
+        border-style: solid;
+      }
+
+      section #md {
+        border-radius: 20px;
+        border-style: solid;
+      }
+
+      section #wd {
+        border-radius: 20px;
+        border-style: solid;
+     
+      }
+      
+      article{
+        padding: 20px;
+      }
+
+      .figures {
+        display: flex;
+        overflow: hidden;
+      }
+
+      footer {
+        display: flex;
+        background-color: black;
+        color: white;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+      }
+
+      @media (max-width: 768px) {
+        .layout {
+          display: flex;
+          flex-direction: column;
+        }
+
+        aside,
+        main {
+          width: 100%;
+        }
+
+        header {
+          flex-wrap: wrap;
+          background-color: rgb(223, 223, 223);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--header-->
+    <header>
+      <h4>
+        <a href="mailto:manda.praneeth72@gmail.com"
+          >mail: manda.praneeth72@gmail.com</a
+        >
+      </h4>
+      &nbsp; &nbsp;
+      <h4><a href="tel:+7989189775">contact-us: 7989189775</a></h4>
+    </header>
+    <!-- Navbar section-->
+    <nav>
+      <img src="images/annaglobalte.png.png" width="100px" height="100px" />
+      <ul>
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="about-us.html">About us</a></li>
+        <li><a href="contact-us.html">Contact us</a></li>
+        <li><a href="service.html">Services</a></li>
+      </ul>
+    </nav>
+
+    <div class="layout">
+   
+      
+       <!--aside-->
+      <aside>
+        <h3><a href="#dm">Digital Marketing</a></h3>
+        <h3><a href="#wd">Web Development</a></h3>
+        <h3><a href="#wd">Mobile Development</a></h3>
+      </aside>
+
+      <!-- Main section-->
+      <main>
+        
+        <section>
+          <article id="dm">
+            <h1>Digital Marketing</h1>
+            <p>
+              <strong>Digital marketing</strong> refers to the use of digital
+              channels, platforms, and technologies to promote products,
+              services, or brands to a targeted audience. It encompasses a wide
+              range of strategies such as
+              <strong
+                >SEO (Search Engine Optimization), Social Media Marketing, Email
+                Campaigns, Content Marketing, Paid Advertising (PPC), Influencer
+                Marketing, and more.</strong
+              >
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="md">
+            <h1>Mobile app development</h1>
+            <p>
+              <strong>Mobile app development</strong> is the process of
+              designing, building, and deploying applications for mobile devices
+              such as smartphones and tablets. In an increasingly mobile-first
+              world, having a powerful, intuitive app helps businesses stay
+              connected with their customers anytime, anywhere.
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="wd">
+            <h1>Web development</h1>
+            <p>
+              <strong>Web development</strong> is the process of creating,
+              building, and maintaining websites and web applications that run
+              online. It involves everything from designing user-friendly
+              interfaces <strong>(UI/UX)</strong>
+              to coding dynamic backend systems that power modern websites.
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="dm">
+            <h1>Digital Marketing</h1>
+            <p>
+              <strong>Digital marketing</strong> refers to the use of digital
+              channels, platforms, and technologies to promote products,
+              services, or brands to a targeted audience. It encompasses a wide
+              range of strategies such as
+              <strong
+                >SEO (Search Engine Optimization), Social Media Marketing, Email
+                Campaigns, Content Marketing, Paid Advertising (PPC), Influencer
+                Marketing, and more.</strong
+              >
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="md">
+            <h1>Mobile app development</h1>
+            <p>
+              <strong>Mobile app development</strong> is the process of
+              designing, building, and deploying applications for mobile devices
+              such as smartphones and tablets. In an increasingly mobile-first
+              world, having a powerful, intuitive app helps businesses stay
+              connected with their customers anytime, anywhere.
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="wd">
+            <h1>Web development</h1>
+            <p>
+              <strong>Web development</strong> is the process of creating,
+              building, and maintaining websites and web applications that run
+              online. It involves everything from designing user-friendly
+              interfaces <strong>(UI/UX)</strong>
+              to coding dynamic backend systems that power modern websites.
+            </p>
+
+            <!--figures in article-->
+            <div class="figures">
+            <figure>
+              <img src="images/SRI RAM TEXTILES LOGO.png" alt="sr textiles" width="100%" />
+              <figcaption>We have done Digital Marketing Services</figcaption>
+            </figure>
+            <figure>
+              <img src="images/SRI RAM TEXTILES LOGO.png" alt="sr textiles"  width="100%" />
+              <figcaption>We have done Digital Marketing Services</figcaption>
+            </figure>
+            <figure>
+              <img src="images/SRI RAM TEXTILES LOGO.png" alt="sr textiles"  width="100%" />
+              <figcaption>We have done Digital Marketing Services</figcaption>
+            </figure>
+            </div>
+        <time datetime="2023-03-17T12:00:00">March 17th, 2025, 12:00</time>
+<address>
+	Written by <a href="https://www.example.com/biography">Name of the author</a>
+</address>
+    
+          </article>
+        </section>
+
+        <section>
+          <article id="dm">
+            <h1>Digital Marketing</h1>
+            <p>
+              <strong>Digital marketing</strong> refers to the use of digital
+              channels, platforms, and technologies to promote products,
+              services, or brands to a targeted audience. It encompasses a wide
+              range of strategies such as
+              <strong
+                >SEO (Search Engine Optimization), Social Media Marketing, Email
+                Campaigns, Content Marketing, Paid Advertising (PPC), Influencer
+                Marketing, and more.</strong
+              >
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="md">
+            <h1>Mobile app development</h1>
+            <p>
+              <strong>Mobile app development</strong> is the process of
+              designing, building, and deploying applications for mobile devices
+              such as smartphones and tablets. In an increasingly mobile-first
+              world, having a powerful, intuitive app helps businesses stay
+              connected with their customers anytime, anywhere.
+            </p>
+          </article>
+        </section>
+
+        <section>
+          <article id="wd">
+            <h1>Web development</h1>
+            <p>
+              <strong>Web development</strong> is the process of creating,
+              building, and maintaining websites and web applications that run
+              online. It involves everything from designing user-friendly
+              interfaces <strong>(UI/UX)</strong>
+              to coding dynamic backend systems that power modern websites.
+            </p>
+          </article>
+        </section>
+      </main>
+
+
+    </div>
+      
+
+    <!-- Footer section-->
+    <footer>
+      <p>© 2025 Anna Global Technologies. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

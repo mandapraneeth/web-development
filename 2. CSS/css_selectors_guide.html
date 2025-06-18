@@ -1,132 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Selectors Complete Guide</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-    }
-    h2 {
-      color: #333;
-    }
-    .highlight {
-      color: red;
-    }
-    #main-content {
-      padding: 20px;
-      border: 1px solid #ccc;
-    }
-    ul li:first-child {
-      font-weight: bold;
-    }
-    ul li:last-child {
-      color: green;
-    }
-    li:nth-child(even) {
-      background: #f0f0f0;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:link {
-      color: blue;
-    }
-    a:visited {
-      color: purple;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #ff6600;
-    }
-    a:active {
-      color: red;
-    }
-    a:focus {
-      outline: 2px dashed orange;
-    }
-    a[href^="https"]::after {
-      content: " 🔗";
-    }
-    a[href$=".pdf"] {
-      background: yellow;
-    }
-    a[href*="login"] {
-      font-weight: bold;
-    }
-    a:not(.btn) {
-      color: green;
-    }
-    nav a {
-      padding: 10px;
-    }
-    ul > li > a {
-      font-size: 16px;
-    }
-    input:invalid {
-      border: 2px solid red;
-    }
-    .card::before {
-      content: "📌 ";
-    }
-    .btn:hover {
-      background-color: #333;
-      color: white;
-    }
-    section:has(article) {
-      border-left: 5px solid blue;
-    }
-  </style>
-</head>
-<body>
-  <div id="main-content">
-    <h1 class="highlight">CSS Selector Examples</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors Complete Guide</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      .highlight {
+        color: red;
+      }
+      #main-content {
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      ul li:first-child {
+        font-weight: bold;
+      }
+      ul li:last-child {
+        color: green;
+      }
+      li:nth-child(even) {
+        background: #f0f0f0;
+      }
+      a {
+        color: #0077cc;
+        text-decoration: none;
+      }
+      a:link {
+        color: blue;
+      }
+      a:visited {
+        color: purple;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #ff6600;
+      }
+      a:active {
+        color: red;
+      }
+      a:focus {
+        outline: 2px dashed orange;
+      }
+      a[href^="https"]::after {
+        content: " 🔗";
+      }
+      a[href$=".pdf"] {
+        background: yellow;
+      }
+      a[href*="login"] {
+        font-weight: bold;
+      }
+      a:not(.btn) {
+        color: green;
+      }
+      nav a {
+        padding: 10px;
+      }
+      ul > li > a {
+        font-size: 16px;
+      }
+      input:invalid {
+        border: 2px solid red;
+      }
+      .card::before {
+        content: "📌 ";
+      }
+      .btn:hover {
+        background-color: #333;
+        color: white;
+      }
+      section:has(article) {
+        border-left: 5px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-content">
+      <h1 class="highlight">CSS Selector Examples</h1>
 
-    <h2>Basic Selectors</h2>
-    <p class="highlight">This is a paragraph with a class.</p>
-    <p id="special">This is a paragraph with an ID.</p>
+      <h2>Basic Selectors</h2>
+      <p class="highlight">This is a paragraph with a class.</p>
+      <p id="special">This is a paragraph with an ID.</p>
 
-    <h2>Combinators</h2>
-    <div>
-      <p>This is inside a div.</p>
+      <h2>Combinators</h2>
+      <div>
+        <p>This is inside a div.</p>
+      </div>
+
+      <h2>List Styling</h2>
+      <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+      </ul>
+
+      <h2>Link Selectors and Examples</h2>
+      <a href="https://example.com">External Link</a><br />
+      <a href="/contact">Internal Link</a><br />
+      <a href="login.html">Login Page</a><br />
+      <a href="files/brochure.pdf">Download PDF</a><br />
+      <a class="btn" href="#">Styled Button Link</a>
+
+      <h2>Form Example</h2>
+      <form>
+        <label>Email:</label>
+        <input type="email" required />
+        <button class="btn">Submit</button>
+      </form>
+
+      <h2>Card Example</h2>
+      <div class="card">Card content styled with pseudo-element</div>
+
+      <h2>:has() Example (not supported in all browsers)</h2>
+      <section>
+        <article>This is an article inside a section.</article>
+      </section>
     </div>
-
-    <h2>List Styling</h2>
-    <ul>
-      <li>First item</li>
-      <li>Second item</li>
-      <li>Third item</li>
-      <li>Fourth item</li>
-    </ul>
-
-    <h2>Link Selectors and Examples</h2>
-    <a href="https://example.com">External Link</a><br>
-    <a href="/contact">Internal Link</a><br>
-    <a href="login.html">Login Page</a><br>
-    <a href="files/brochure.pdf">Download PDF</a><br>
-    <a class="btn" href="#">Styled Button Link</a>
-
-    <h2>Form Example</h2>
-    <form>
-      <label>Email:</label>
-      <input type="email" required>
-      <button class="btn">Submit</button>
-    </form>
-
-    <h2>Card Example</h2>
-    <div class="card">Card content styled with pseudo-element</div>
-
-    <h2>:has() Example (not supported in all browsers)</h2>
-    <section>
-      <article>This is an article inside a section.</article>
-    </section>
-  </div>
-</body>
+  </body>
 </html>

@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Image Gallery with Lightbox</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .image-wrapper {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-controls button {
+      background: rgba(255, 255, 255, 0.6);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 50%;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Responsive Image Gallery with Lightbox</h1>
+
+<div class="image-grid" id="gallery">
+  <div class="image-wrapper"><img src="https://via.placeholder.com/400x500" alt="1"></div>
+  <div class="image-wrapper"><img src="https://via.placeholder.com/600x400" alt="2"></div>
+  <div class="image-wrapper"><img src="https://via.placeholder.com/500x300" alt="3"></div>
+  <div class="image-wrapper"><img src="https://via.placeholder.com/800x600" alt="4"></div>
+  <div class="image-wrapper"><img src="https://via.placeholder.com/450x700" alt="5"></div>
+</div>
+
+<!-- Lightbox Popup -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <div class="lightbox-controls">
+    <button onclick="prevImage()">&#8592;</button>
+    <button onclick="nextImage()">&#8594;</button>
+  </div>
+  <img id="lightbox-img" src="" alt="popup">
+</div>
+
+<script>
+  const galleryImages = document.querySelectorAll('#gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let currentIndex = 0;
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      showImage();
+    });
+  });
+
+  function showImage() {
+    lightboxImg.src = galleryImages[currentIndex].src;
+    lightbox.classList.add('active');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    showImage();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImage();
+  }
+
+  // Auto slideshow
+  setInterval(() => {
+    if (lightbox.classList.contains('active')) {
+      nextImage();
+    }
+  }, 3000);
+</script>
+
+</body>
+</html>
